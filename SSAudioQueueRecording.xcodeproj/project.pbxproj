@@ -15,6 +15,9 @@
 		4C95C930242A350E0044EFD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C95C92E242A350E0044EFD3 /* LaunchScreen.storyboard */; };
 		4C95C93B242A350F0044EFD3 /* SSAudioQueueRecordingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C93A242A350F0044EFD3 /* SSAudioQueueRecordingTests.swift */; };
 		4C95C946242A350F0044EFD3 /* SSAudioQueueRecordingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95C945242A350F0044EFD3 /* SSAudioQueueRecordingUITests.swift */; };
+		4C984DE524360E1C002BD7F8 /* SSRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C984DE424360E1C002BD7F8 /* SSRecorder.swift */; };
+		4CEBCE4D2436E60600B6D990 /* SSAudioUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEBCE4C2436E60600B6D990 /* SSAudioUtil.swift */; };
+		4CED8A68242A39F900D37AF7 /* SSRecorderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CED8A67242A39F900D37AF7 /* SSRecorderState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		4C95C941242A350F0044EFD3 /* SSAudioQueueRecordingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSAudioQueueRecordingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C95C945242A350F0044EFD3 /* SSAudioQueueRecordingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAudioQueueRecordingUITests.swift; sourceTree = "<group>"; };
 		4C95C947242A350F0044EFD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C984DE424360E1C002BD7F8 /* SSRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRecorder.swift; sourceTree = "<group>"; };
+		4CEBCE4C2436E60600B6D990 /* SSAudioUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAudioUtil.swift; sourceTree = "<group>"; };
+		4CED8A67242A39F900D37AF7 /* SSRecorderState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRecorderState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,9 @@
 				4C95C923242A35090044EFD3 /* AppDelegate.swift */,
 				4C95C925242A35090044EFD3 /* SceneDelegate.swift */,
 				4C95C927242A35090044EFD3 /* ViewController.swift */,
+				4CED8A67242A39F900D37AF7 /* SSRecorderState.swift */,
+				4C984DE424360E1C002BD7F8 /* SSRecorder.swift */,
+				4CEBCE4C2436E60600B6D990 /* SSAudioUtil.swift */,
 				4C95C929242A35090044EFD3 /* Main.storyboard */,
 				4C95C92C242A350E0044EFD3 /* Assets.xcassets */,
 				4C95C92E242A350E0044EFD3 /* LaunchScreen.storyboard */,
@@ -260,8 +269,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C95C928242A35090044EFD3 /* ViewController.swift in Sources */,
+				4CED8A68242A39F900D37AF7 /* SSRecorderState.swift in Sources */,
 				4C95C924242A35090044EFD3 /* AppDelegate.swift in Sources */,
 				4C95C926242A35090044EFD3 /* SceneDelegate.swift in Sources */,
+				4CEBCE4D2436E60600B6D990 /* SSAudioUtil.swift in Sources */,
+				4C984DE524360E1C002BD7F8 /* SSRecorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,12 +447,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D9AA9R4CQS;
 				INFOPLIST_FILE = SSAudioQueueRecording/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.michael.SSAudioQueueRecording;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demo.michael;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,12 +466,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D9AA9R4CQS;
 				INFOPLIST_FILE = SSAudioQueueRecording/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.demo.michael.SSAudioQueueRecording;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demo.michael;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

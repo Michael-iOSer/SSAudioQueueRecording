@@ -10,11 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var recorder:SSRecorder = SSRecorder()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
-
-
+    @IBAction func startAction(_ sender: Any) {
+        self.recorder.start()
+    }
+    
+    @IBAction func pauseAction(_ sender: Any) {
+        self.recorder.pause()
+    }
+    
+    @IBAction func resumeAction(_ sender: Any) {
+        self.recorder.resume()
+    }
+    
+    @IBAction func stopAction(_ sender: Any) {
+        self.recorder.stop()
+    }
 }
 
