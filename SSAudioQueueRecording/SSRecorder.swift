@@ -10,6 +10,8 @@ import UIKit
 import AudioToolbox
 import AVFoundation
 
+fileprivate let kNumberBuffers: Int = 3
+
 class SSRecorder: NSObject {
     var recorderState = SSRecorderState()
     
@@ -47,7 +49,7 @@ class SSRecorder: NSObject {
         SSCheckError(status, "setMagicCookieForFile")
 
         self.deriveBufferSize(inAQ: self.recorderState.mQueue!, asbDescription: self.recorderState.mDataFormat, seconds: 0.5, ioBufferSize: &self.recorderState.mBuffSize)
-        for _ in 0..<3 {
+        for _ in 0..<kNumberBuffers {
             var buffer: AudioQueueBufferRef? = nil
             status = AudioQueueAllocateBuffer(self.recorderState.mQueue!, self.recorderState.mBuffSize, &buffer)
             SSCheckError(status, "AudioQueueAllocateBuffer")
@@ -71,11 +73,11 @@ class SSRecorder: NSObject {
     }
     
     func pause() -> Void {
-        
+        AudioQueuePause(self.recorderState.mQueue!)
     }
     
     func resume() -> Void {
-        
+        AudioQueueStart(self.recorderState.mQueue!, nil)
     }
     
     //
@@ -90,7 +92,6 @@ class SSRecorder: NSObject {
         
         var ioNumPackets = inNumberPacket
 
-        print("ioNumPackets===== "+"\(ioNumPackets)")
         if ioNumPackets>0 {
             let status = AudioFileWritePackets(recorder.recorderState.mAudioFile!, false, inBuffer.pointee.mAudioDataByteSize, inPacketDescs, recorder.recorderState.mCurrentPacketIndex, &ioNumPackets, inBuffer.pointee.mAudioData)
             SSCheckError(status, "AudioFileWritePackets")
